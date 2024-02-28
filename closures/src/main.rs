@@ -3,7 +3,7 @@ use std::thread;
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
-    height: u32,
+    _height: u32,
 }
 
 fn main() {
@@ -28,15 +28,15 @@ fn main() {
     let mut list = [
         Rectangle {
             width: 10,
-            height: 1,
+            _height: 1,
         },
         Rectangle {
             width: 3,
-            height: 5,
+            _height: 5,
         },
         Rectangle {
             width: 7,
-            height: 12,
+            _height: 12,
         },
     ];
 
@@ -44,8 +44,8 @@ fn main() {
     list.sort_by_key(|r| r.width);
     println!("{:#?}", list);
 
-    let mut sort_operations: Vec<String> = vec![];
-    let value = String::from("by key called");
+    let mut _sort_operations: Vec<String> = vec![];
+    let _value = String::from("by key called");
 
     list.sort_by_key(|r| {
         // This doesn't because we're moving `value` out of the closure environment which we can't do in an `FnMut`
